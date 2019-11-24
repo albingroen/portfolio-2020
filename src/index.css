@@ -603,6 +603,10 @@ video {
   display: none;
 }
 
+body {
+  background-color: #1a202c;
+}
+
 .container {
   width: 100%;
 }

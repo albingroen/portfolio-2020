@@ -3,7 +3,7 @@ import * as React from "react";
 interface ITextBlockProps {
   number?: string;
   heading: string;
-  lede: string;
+  lede?: string;
   variant?: "left" | "right" | "center";
   parseHTML?: boolean;
   extra?: React.ReactNode;
@@ -23,10 +23,12 @@ export default function TextBlock({
           {number && <span className="font-mono text-2xl">{number} </span>}
           {heading}
         </h1>
-        <p
-          className={`text-xl mt-6 text-gray-600 font-light text-${variant}`}
-          dangerouslySetInnerHTML={{ __html: lede }}
-        />
+        {lede && (
+          <p
+            className={`text-xl mt-6 text-gray-600 font-light text-${variant}`}
+            dangerouslySetInnerHTML={{ __html: lede }}
+          />
+        )}
         {extra}
       </div>
     </div>

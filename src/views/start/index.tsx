@@ -3,7 +3,10 @@ import axios from "axios";
 import Hero from "./components/hero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faExternalLinkAlt,
+  faFolderOpen
+} from "@fortawesome/free-solid-svg-icons";
 import TextBlock from "../../components/text-block";
 
 const jobs = [
@@ -30,11 +33,15 @@ const jobs = [
   }
 ];
 
-export default class Start extends React.Component<{}, { projects: any }> {
+export default class Start extends React.Component<
+  {},
+  { projects: any; ghProjects: any }
+> {
   constructor(props: any) {
     super(props);
     this.state = {
-      projects: []
+      projects: [],
+      ghProjects: []
     };
   }
 
@@ -42,10 +49,14 @@ export default class Start extends React.Component<{}, { projects: any }> {
     axios
       .get("https://albingroen.tech/data")
       .then((res: any) => this.setState({ projects: res.data.projects }));
+
+    axios
+      .get("https://api.github.com/users/albingroen/repos")
+      .then(res => this.setState({ ghProjects: res.data }));
   }
 
   render() {
-    const { projects } = this.state;
+    const { projects, ghProjects } = this.state;
 
     return (
       <div>
@@ -103,21 +114,91 @@ export default class Start extends React.Component<{}, { projects: any }> {
                     }}
                   />
                   <div className={`w-1/2 ${i % 2 === 0 ? "pl-12" : "pr-12"}`}>
-                    <h3 className="text-white text-xl font-mono">
-                      {project.title}
-                    </h3>
+                    <h4 className="text-white font-mono mb-2 uppercase text-xs tracking-widest">
+                      {project.type}
+                    </h4>
+                    <h3 className="text-white text-2xl">{project.title}</h3>
                     <p className="text-gray-600 mt-4">{project.description}</p>
                     <div className="mt-8 opacity-75">
-                      <i className="text-white text-2xl mr-6">
-                        <FontAwesomeIcon icon={faGithub} />
-                      </i>
-                      <i className="text-white text-2xl">
-                        <FontAwesomeIcon icon={faExternalLinkAlt} />
-                      </i>
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="text-white text-2xl mr-6">
+                          <FontAwesomeIcon icon={faGithub} />
+                        </i>
+                      </a>
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="text-white text-2xl">
+                          <FontAwesomeIcon icon={faExternalLinkAlt} />
+                        </i>
+                      </a>
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+          }
+        />
+        <TextBlock
+          number="04."
+          heading="Other projects"
+          parseHTML
+          variant="center"
+          extra={
+            <div
+              className="mt-16 max-w-4xl"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+                gridGap: "2rem"
+              }}
+            >
+              {ghProjects
+                .filter((project: any) => !project.fork)
+                .map((project: any) => (
+                  <div className="bg-gray-800 rounded p-6 relative">
+                    <i className="text-white mb-2 block text-2xl">
+                      <FontAwesomeIcon icon={faFolderOpen} />
+                    </i>
+                    <h3 className="text-white text-xl">{project.name}</h3>
+                    <p className="text-white opacity-75 mt-2 mb-12 font-light tracking-wider">
+                      {project.description}
+                    </p>
+                    <div className="absolute w-full bottom-0 left-0 p-6 flex justify-between items-center">
+                      <h3 className="text-white text-sm opacity-50">
+                        {project.language}
+                      </h3>
+                      <div>
+                        <a
+                          href={project.html_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="text-lg text-white opacity-50 hover:opacity-100 transition">
+                            <FontAwesomeIcon icon={faGithub} />
+                          </i>
+                        </a>
+                        {project.homepage && (
+                          <a
+                            href={project.homepage}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="text-lg opacity-50 text-white hover:opacity-100 transition ml-4">
+                              <FontAwesomeIcon icon={faExternalLinkAlt} />
+                            </i>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
           }
         />
