@@ -8,6 +8,7 @@ import {
   faFolderOpen
 } from "@fortawesome/free-solid-svg-icons";
 import TextBlock from "../../components/text-block";
+import Footer from "./components/footer";
 
 const jobs = [
   {
@@ -202,6 +203,7 @@ export default class Start extends React.Component<
             </div>
           }
         />
+        <Footer />
       </div>
     );
   }

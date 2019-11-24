@@ -41,3 +41,30 @@ body {
     height: 0rem;
   }
 }
+
+.animated-border-reverse {
+  animation-name: scrollUp;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: top;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translate3d(-2px, 8rem, 0);
+    height: 0;
+  }
+  25% {
+    transform: translate3d(-2px, 5rem, 0);
+    height: 3rem;
+  }
+  75% {
+    transform: translate3d(-2px, 0, 0);
+    height: 3rem;
+  }
+  100% {
+    transform: translate3d(-2px, 0, 0);
+    height: 0rem;
+  }
+}

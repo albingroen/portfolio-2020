@@ -11465,6 +11465,71 @@ body {
   }
 }
 
+.animated-border-reverse {
+  -webkit-animation-name: scrollUp;
+          animation-name: scrollUp;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+@-webkit-keyframes scrollUp {
+  0% {
+    -webkit-transform: translate3d(-2px, 8rem, 0);
+            transform: translate3d(-2px, 8rem, 0);
+    height: 0;
+  }
+
+  25% {
+    -webkit-transform: translate3d(-2px, 5rem, 0);
+            transform: translate3d(-2px, 5rem, 0);
+    height: 3rem;
+  }
+
+  75% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+            transform: translate3d(-2px, 0, 0);
+    height: 3rem;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+            transform: translate3d(-2px, 0, 0);
+    height: 0rem;
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    -webkit-transform: translate3d(-2px, 8rem, 0);
+            transform: translate3d(-2px, 8rem, 0);
+    height: 0;
+  }
+
+  25% {
+    -webkit-transform: translate3d(-2px, 5rem, 0);
+            transform: translate3d(-2px, 5rem, 0);
+    height: 3rem;
+  }
+
+  75% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+            transform: translate3d(-2px, 0, 0);
+    height: 3rem;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+            transform: translate3d(-2px, 0, 0);
+    height: 0rem;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
