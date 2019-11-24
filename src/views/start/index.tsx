@@ -1,6 +1,9 @@
 import * as React from "react";
 import axios from "axios";
 import Hero from "./components/hero";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import TextBlock from "../../components/text-block";
 
 const jobs = [
@@ -89,7 +92,7 @@ export default class Start extends React.Component<{}, { projects: any }> {
                 <div
                   className={`my-32 flex justify-between ${
                     i % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  }`}
+                  } ${i % 2 === 0 ? "text-right" : "text-left"}`}
                 >
                   <div
                     className="bg-center bg-cover rounded"
@@ -100,20 +103,18 @@ export default class Start extends React.Component<{}, { projects: any }> {
                     }}
                   />
                   <div className={`w-1/2 ${i % 2 === 0 ? "pl-12" : "pr-12"}`}>
-                    <h3
-                      className={`text-white text-xl font-mono ${
-                        i % 2 === 0 ? "text-right" : "text-left"
-                      }`}
-                    >
+                    <h3 className="text-white text-xl font-mono">
                       {project.title}
                     </h3>
-                    <p
-                      className={`text-gray-600 mt-4 ${
-                        i % 2 === 0 ? "text-right" : "text-left"
-                      }`}
-                    >
-                      {project.description}
-                    </p>
+                    <p className="text-gray-600 mt-4">{project.description}</p>
+                    <div className="mt-8 opacity-75">
+                      <i className="text-white text-2xl mr-6">
+                        <FontAwesomeIcon icon={faGithub} />
+                      </i>
+                      <i className="text-white text-2xl">
+                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      </i>
+                    </div>
                   </div>
                 </div>
               ))}
