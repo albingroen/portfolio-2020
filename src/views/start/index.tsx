@@ -152,18 +152,11 @@ export default class Start extends React.Component<
           parseHTML
           variant="center"
           extra={
-            <div
-              className="mt-16 max-w-4xl"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
-                gridGap: "2rem"
-              }}
-            >
+            <div className="mt-16 projects">
               {ghProjects
                 .filter((project: any) => !project.fork)
                 .map((project: any) => (
-                  <div className="bg-gray-800 rounded p-6 relative">
+                  <div className="bg-gray-800 rounded p-6 relative w-auto">
                     <i className="text-white mb-2 block text-2xl">
                       <FontAwesomeIcon icon={faFolderOpen} />
                     </i>

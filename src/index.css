@@ -11530,6 +11530,12 @@ body {
   }
 }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
