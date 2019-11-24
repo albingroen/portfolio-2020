@@ -71,7 +71,7 @@ export default class Start extends React.Component<
         <TextBlock
           number="02."
           heading="Where I've worked"
-          lede="My name is Albin. I'm passionate about the web and design. I work at a company called <a href='https://dooer.com' className='text-blue-600' target='_blank' rel='noopener noreferrer'>Dooer</a> as a web developer. On my spare time I work on side projects, work out and attend conferences and meetups."
+          lede="I've worked as everything from a freelance product designer to a full stack web developer. I've worked as a freelancer, startup and scaleup learning many different area of software development and in building a business."
           parseHTML
           extra={
             <div className="mt-16 max-w-4xl border-b-2 border-gray-700 border-dashed">
@@ -96,7 +96,7 @@ export default class Start extends React.Component<
         <TextBlock
           number="03."
           heading="Projects"
-          lede="My name is Albin. I'm passionate about the web and design. I work at a company called <a href='https://dooer.com' className='text-blue-600' target='_blank' rel='noopener noreferrer'>Dooer</a> as a web developer. On my spare time I work on side projects, work out and attend conferences and meetups."
+          lede="I've worked on quite a lof of different projects and products. I've been working a whole lot with frontend development and been managing the frontend part of many different projects."
           parseHTML
           extra={
             <div className="mt-16 max-w-4xl">
