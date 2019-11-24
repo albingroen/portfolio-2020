@@ -16,21 +16,21 @@ const jobs = [
     role: "Web development",
     period: ["Aug 2019", "Ongoing"],
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore et, delectus beatae soluta facere ut amet quam! Quas recusandae maiores nostrum deserunt molestiae facere! Iusto numquam quos officia ipsam officiis."
+      "At Dooer I work as a web developer mangaing the development of the marketing website as well as improve the products reaching the end users. The technologies I work with include JavaScript, React, Typeacript and GraphQL."
   },
   {
     company: "Wopify",
     role: "Fullstack development",
     period: ["Jan 2018", "Jul 2019"],
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore et, delectus beatae soluta facere ut amet quam! Quas recusandae maiores nostrum deserunt molestiae facere! Iusto numquam quos officia ipsam officiis."
+      "At Wopify I worked as a full stack web developer with JavaScript, React, Node and MongoDB. I worked on redesigning and rebuilding the entire Wopify for Business recruiting platform from the ground up and enhancing the product."
   },
   {
     company: "Albin Groen",
     role: "Freelance design",
     period: ["Jun 2017", "Dec 2017"],
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore et, delectus beatae soluta facere ut amet quam! Quas recusandae maiores nostrum deserunt molestiae facere! Iusto numquam quos officia ipsam officiis."
+      "As a freelance product designer I worked on building a design for a up and coming app called Loovia. I worked on everything from the wireframing to the brand design and prototyping and manage to deliver a complete package."
   }
 ];
 
