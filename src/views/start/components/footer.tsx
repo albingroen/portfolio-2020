@@ -3,7 +3,7 @@ import Button from "../../../components/button";
 
 export default function Footer() {
   return (
-    <div className="pb-16 px-8 bg-gray-900 flex items-center justify-center flex-col">
+    <div className="px-8 bg-gray-900 flex items-center justify-center flex-col">
       <p className="text-gray-600 text-xl">
         Web development, automation and design
       </p>
