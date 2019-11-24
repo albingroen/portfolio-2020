@@ -1,15 +1,15 @@
 import * as React from "react";
 import Button from "../../../components/button";
 import Profile from "../../../images/profile_square.jpeg";
+import Social from "../../../components/social";
 
 export default function Hero() {
   return (
     <div className="px-8 bg-gray-900 h-screen flex items-center justify-center flex-col mb-20">
+      <Social />
       <img src={Profile} alt="Profile" className="w-16 h-16 mb-6 rounded" />
       <h1 className="text-white text-center text-6xl">Albin Groen</h1>
-      <p className="text-gray-600 text-xl">
-        Web development, automation and design
-      </p>
+      <p className="text-gray-600 text-xl">Pixel perfect web development</p>
       <a href="mailto:albin.groen@gmail.com?subject=Hello%20Albin!">
         <Button className="mt-8">Get in contact</Button>
       </a>

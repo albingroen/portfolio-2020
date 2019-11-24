@@ -102,7 +102,7 @@ export default class Start extends React.Component<
             <div className="mt-16 max-w-4xl">
               {projects.map((project: any, i: number) => (
                 <div
-                  className={`my-32 flex justify-between ${
+                  className={`mt-32 flex justify-between ${
                     i % 2 === 0 ? "flex-row" : "flex-row-reverse"
                   } ${i % 2 === 0 ? "text-right" : "text-left"}`}
                 >
