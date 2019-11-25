@@ -102,19 +102,21 @@ export default class Start extends React.Component<
             <div className="mt-16 max-w-4xl">
               {projects.map((project: any, i: number) => (
                 <div
-                  className={`mt-32 flex justify-between ${
+                  className={`mt-32 flex justify-between flex-col sm:${
                     i % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  } ${i % 2 === 0 ? "text-right" : "text-left"}`}
+                  } text-center sm:${
+                    i % 2 === 0 ? "text-right" : "text-left"
+                  } md`}
                 >
-                  <div
-                    className="bg-center bg-cover rounded"
-                    style={{
-                      backgroundImage: `url(${project.imageURL})`,
-                      height: "300px",
-                      width: "600px"
-                    }}
+                  <img
+                    className="rounded mb-8 sm:mb-0 max-w-xs sm:max-w-md"
+                    src={project.imageURL}
                   />
-                  <div className={`w-1/2 ${i % 2 === 0 ? "pl-12" : "pr-12"}`}>
+                  <div
+                    className={`w-full sm:w-1/2 sm:${
+                      i % 2 === 0 ? "pl-12" : "pr-12"
+                    }`}
+                  >
                     <h4 className="text-white font-mono mb-2 uppercase text-xs tracking-widest">
                       {project.type}
                     </h4>
