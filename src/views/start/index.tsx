@@ -111,6 +111,7 @@ export default class Start extends React.Component<
                   <img
                     className="rounded mb-8 sm:mb-0 max-w-xs sm:max-w-md"
                     src={project.imageURL}
+                    alt="Project"
                   />
                   <div
                     className={`w-full sm:w-1/2 sm:${
