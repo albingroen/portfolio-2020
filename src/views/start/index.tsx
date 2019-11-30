@@ -8,6 +8,7 @@ import {
   faFolderOpen
 } from "@fortawesome/free-solid-svg-icons";
 import TextBlock from "../../components/text-block";
+import Progress from "../../components/progress";
 import Footer from "./components/footer";
 
 const jobs = [
@@ -61,6 +62,7 @@ export default class Start extends React.Component<
 
     return (
       <div>
+        <Progress />
         <Hero />
         <TextBlock
           number="01."
