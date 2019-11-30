@@ -1,4 +1,5 @@
 import * as React from "react";
+import withSizes from "react-sizes"
 import axios from "axios";
 import Hero from "./components/hero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,10 +36,10 @@ const jobs = [
   }
 ];
 
-export default class Start extends React.Component<
-  {},
+class Start extends React.Component<
+  { isMobile: boolean },
   { projects: any; ghProjects: any }
-> {
+  > {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -59,10 +60,13 @@ export default class Start extends React.Component<
 
   render() {
     const { projects, ghProjects } = this.state;
+    const { isMobile } = this.props
 
     return (
       <div>
-        <Progress />
+        {!isMobile && (
+          <Progress />
+        )}
         <Hero />
         <TextBlock
           number="01."
@@ -106,9 +110,9 @@ export default class Start extends React.Component<
                 <div
                   className={`mt-32 flex justify-between flex-col sm:${
                     i % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  } text-center sm:${
+                    } text-center sm:${
                     i % 2 === 0 ? "text-right" : "text-left"
-                  } md`}
+                    } md`}
                 >
                   <img
                     className="rounded mb-8 sm:mb-0 max-w-xs sm:max-w-md"
@@ -118,7 +122,7 @@ export default class Start extends React.Component<
                   <div
                     className={`w-full sm:w-1/2 sm:${
                       i % 2 === 0 ? "pl-12" : "pr-12"
-                    }`}
+                      }`}
                   >
                     <h4 className="text-white font-mono mb-2 uppercase text-xs tracking-widest">
                       {project.type}
@@ -206,3 +210,9 @@ export default class Start extends React.Component<
     );
   }
 }
+
+const mapSizesToProps = ({ width }: { width: number }) => ({
+  isMobile: width < 480,
+})
+
+export default withSizes(mapSizesToProps)(Start)
